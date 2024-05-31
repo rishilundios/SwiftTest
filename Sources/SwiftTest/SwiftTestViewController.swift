@@ -21,12 +21,12 @@ public class SwiftTestViewController: UIViewController, UITableViewDataSource, U
         
         setupTableView()
         setupButton()
-        
         fetchEmails()
     }
 
     private func setupTableView() {
         tableView = UITableView(frame: self.view.bounds)
+        setupUI(view: tableView)
         tableView.dataSource = self
         tableView.delegate = self
         self.view.addSubview(tableView)
@@ -34,9 +34,10 @@ public class SwiftTestViewController: UIViewController, UITableViewDataSource, U
 
     private func setupButton() {
         button = UIButton(type: .system)
+        setupUI(view: button)
         button.setTitle("Return To App", for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-        button.center = CGPoint(x: self.view.center.x, y: self.view.bounds.height - 100)
+        button.center = CGPoint(x: self.view.center.x, y: self.view.bounds.height - 200)
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         self.view.addSubview(button)
     }
@@ -71,6 +72,14 @@ public class SwiftTestViewController: UIViewController, UITableViewDataSource, U
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = emails[indexPath.row]
         return cell
+    }
+}
+
+extension SwiftTestViewController{
+    private func setupUI(view : UIView) {
+        view.layer.borderWidth = 0.8
+        view.layer.borderColor = UIColor.systemBlue.cgColor
+        view.layer.cornerRadius = 3
     }
 }
 
