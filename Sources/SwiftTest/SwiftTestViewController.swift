@@ -25,7 +25,7 @@ public class SwiftTestViewController: UIViewController, UITableViewDataSource, U
     }
 
     private func setupTableView() {
-        tableView = UITableView(frame: self.view.bounds)
+        tableView.frame = CGRect(x: 15, y: 20, width: self.view.frame.width - 30 , height: 400)
         setupUI(view: tableView)
         tableView.dataSource = self
         tableView.delegate = self
