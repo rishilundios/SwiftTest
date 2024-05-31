@@ -34,7 +34,7 @@ public class SwiftTestViewController: UIViewController, UITableViewDataSource, U
 
     private func setupButton() {
         button = UIButton(type: .system)
-        button.setTitle("Select First Email", for: .normal)
+        button.setTitle("Return To App", for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         button.center = CGPoint(x: self.view.center.x, y: self.view.bounds.height - 100)
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
